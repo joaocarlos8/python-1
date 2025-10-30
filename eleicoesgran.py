@@ -4,7 +4,7 @@ import time
 def eleicoes_grantiete():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("🗳️ ELEIÇÕES GRANTIETÊ 2025 - URNA ELETRÔNICA 🗳️\n")
+        print("==== ELEIÇÕES GRANTIETÊ 2025 - URNA ELETRÔNICA ====\n")
         print("1 - Iniciar votação")
         print("0 - Voltar ao menu principal")
         opcao = input("\nEscolha uma opção: ")
@@ -37,13 +37,13 @@ def iniciar_votacao():
 
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("🗳️ ELEIÇÕES GRANTIETÊ 2025 - URNA ELETRÔNICA 🗳️\n")
+        print("==== ELEIÇÕES GRANTIETÊ 2025 - URNA ELETRÔNICA ====\n")
 
         num_aluno = input("Digite o número do aluno (0 para encerrar a votação): ")
 
         # Validação do número digitado
         if not num_aluno.isdigit():
-            print("\n⚠️ Por favor, digite apenas números.")
+            print("\nPor favor, digite apenas números.")
             time.sleep(1.5)
             continue
 
@@ -55,7 +55,7 @@ def iniciar_votacao():
 
         # Impedir voto duplicado
         if num_aluno in alunos_votaram:
-            print("\n⚠️ Este aluno já votou! Cada aluno só pode votar uma vez.")
+            print("\nEste aluno já votou! Cada aluno só pode votar uma vez.")
             time.sleep(1.5)
             continue
 
@@ -63,7 +63,7 @@ def iniciar_votacao():
         try:
             voto = int(input("Digite o número do seu candidato: "))
         except ValueError:
-            print("\n⚠️ Valor inválido. Digite um número de candidato.")
+            print("\nValor inválido. Digite um número de candidato.")
             time.sleep(1.5)
             continue
 
@@ -74,9 +74,9 @@ def iniciar_votacao():
             if confirmacao == "sim":
                 votos[voto] += 1
                 alunos_votaram.append(num_aluno)
-                print("\n✅ Voto confirmado com sucesso!")
+                print("\nVoto confirmado com sucesso!")
             else:
-                print("\n⚠️ Voto cancelado, tente novamente.")
+                print("\nVoto cancelado, tente novamente.")
                 time.sleep(1.5)
                 continue
 
@@ -85,9 +85,9 @@ def iniciar_votacao():
             if confirmacao == "sim":
                 votos_brancos += 1
                 alunos_votaram.append(num_aluno)
-                print("\n✅ Voto em branco registrado.")
+                print("\nVoto em branco registrado.")
             else:
-                print("\n⚠️ Voto cancelado.")
+                print("\nVoto cancelado.")
                 time.sleep(1.5)
                 continue
 
@@ -96,9 +96,9 @@ def iniciar_votacao():
             if confirmacao == "sim":
                 votos_nulos += 1
                 alunos_votaram.append(num_aluno)
-                print("\n✅ Voto nulo registrado.")
+                print("\nVoto nulo registrado.")
             else:
-                print("\n⚠️ Voto cancelado.")
+                print("\nVoto cancelado.")
                 time.sleep(1.5)
                 continue
 
@@ -109,7 +109,7 @@ def iniciar_votacao():
     total_votos = sum(votos.values()) + votos_brancos + votos_nulos
     votos_validos = sum(votos.values()) + votos_brancos
 
-    print("📊 RESULTADO DAS ELEIÇÕES GRANTIETÊ 2025 📊\n")
+    print("==== RESULTADO DAS ELEIÇÕES GRANTIETÊ 2025 ====\n")
     print(f"Total de votos registrados: {total_votos}\n")
     print("Votos por candidato:\n")
 
@@ -125,13 +125,12 @@ def iniciar_votacao():
     if sum(votos.values()) > 0:
         vencedor = max(votos, key=votos.get)
         nome_vencedor, _ = candidatos[vencedor]
-        print(f"\n🏆 Candidato mais votado: {nome_vencedor} com {votos[vencedor]} voto(s)!")
+        print(f"\nCandidato mais votado: {nome_vencedor} com {votos[vencedor]} voto(s)!")
     else:
         print("\nNenhum voto válido foi computado.")
 
     input("\nPressione ENTER para retornar ao menu...")
 
 
-# Execução direta do programa
 if __name__ == "__main__":
     eleicoes_grantiete()

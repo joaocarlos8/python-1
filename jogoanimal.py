@@ -40,35 +40,34 @@ def adivinhar_animal():
     if vive_na_agua == 's':
         eh_peixe = input("É um peixe? (s/n): ").lower()
         if eh_peixe == 's':
-            print("\nAcertei! 🐟")
+            print("\nAcertei! É um peixe.")
         else:
-            print("\nEntão deve ser um golfinho! 🐬")
+            print("\nEntão deve ser um golfinho.")
     else:
         voa = input("O animal voa? (s/n): ").lower()
         if voa == 's':
             ave_rapina = input("É uma ave de rapina? (s/n): ").lower()
             if ave_rapina == 's':
-                print("\nAcertei! 🦅")
+                print("\nAcertei! É uma ave de rapina.")
             else:
-                print("\nEntão deve ser um papagaio! 🦜")
+                print("\nEntão deve ser um papagaio.")
         else:
             domestico = input("É um animal doméstico? (s/n): ").lower()
             if domestico == 's':
                 late = input("Ele late? (s/n): ").lower()
                 if late == 's':
-                    print("\nAcertei! 🐶")
+                    print("\nAcertei! É um cachorro.")
                 else:
-                    print("\nEntão é um gato! 🐱")
+                    print("\nEntão é um gato.")
             else:
                 selvagem = input("É um animal selvagem grande? (s/n): ").lower()
                 if selvagem == 's':
-                    print("\nDeve ser um leão! 🦁")
+                    print("\nDeve ser um leão.")
                 else:
-                    print("\nTalvez seja um coelho! 🐰")
+                    print("\nTalvez seja um coelho.")
 
     input("\nPressione ENTER para voltar ao menu...")
 
 
-# Execução direta do programa
 if __name__ == "__main__":
     jogo_animais()

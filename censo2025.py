@@ -4,7 +4,7 @@ import time
 def censo_2025():
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("📊 CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO 📊\n")
+        print("==== CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO ====\n")
         print("1 - Iniciar coleta de dados")
         print("0 - Voltar ao menu principal")
         opcao = input("\nEscolha uma opção: ")
@@ -14,7 +14,7 @@ def censo_2025():
         elif opcao == "0":
             break
         else:
-            print("\n⚠️ Opção inválida, tente novamente.")
+            print("\nOpção inválida, tente novamente.")
             time.sleep(1.5)
 
 
@@ -31,11 +31,11 @@ def iniciar_censo():
     qtd_salarios_geral = 0
 
     while True:
-        print("📊 CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO 📊\n")
+        print("==== CENSO 2025 - LEVANTAMENTO DEMOGRÁFICO ====\n")
         try:
             pessoas = int(input("Quantas pessoas moram na residência? "))
         except ValueError:
-            print("⚠️ Digite um número válido!")
+            print("Digite um número válido!")
             time.sleep(1.5)
             os.system('cls' if os.name == 'nt' else 'clear')
             continue
@@ -98,7 +98,7 @@ def iniciar_censo():
         media_idade_geral = soma_idades_geral / total_pessoas
         media_sal_geral = soma_salarios_geral / qtd_salarios_geral if qtd_salarios_geral > 0 else 0
 
-        print("\n📈 RELATÓRIO FINAL DO CENSO 2025 📈\n")
+        print("\n==== RELATÓRIO FINAL DO CENSO 2025 ====\n")
         print(f"Total de residências pesquisadas: {total_residencias}")
         print(f"Total de pessoas analisadas: {total_pessoas}")
         print(f"Média geral de idades: {media_idade_geral:.1f}")
@@ -112,4 +112,3 @@ def iniciar_censo():
 
 if __name__ == "__main__":
     censo_2025()
-
